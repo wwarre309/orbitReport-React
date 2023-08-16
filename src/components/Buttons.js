@@ -1,8 +1,23 @@
-const Buttons = () => {
+import satData from "./satData";
+import '../App';
+import './styling.css'
+
+
+//4 buttons when finished 
+
+const Buttons = (props) => {
   return (
-    <div>
-      <button>Placeholder Button</button>
-      <button>All Orbits</button>
+    <div className="flex-container">
+      {props.displaySats.map((sat, id) => {
+        return (
+          <button onClick={() => props.filterByType(sat)} key={id}>
+            {sat} Ortbit
+          </button>
+        );
+      })};
+      <button onClick={() => props.setSat(satData)}>
+        All Orbits
+        </button>
       </div>
   );
 };
