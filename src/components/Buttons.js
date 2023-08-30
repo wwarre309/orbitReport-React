@@ -8,10 +8,13 @@ import './styling.css'
 const Buttons = (props) => {
   return (
     <div className="flex-container">
+      {/* <button> Low Orbit </button>
+      <button> Medium Orbit </button>
+      <button> High Orbit </button> */}
       {props.displaySats.map((sat, id) => {
         return (
           <button onClick={() => props.filterByType(sat)} key={id}>
-            {sat} Ortbit
+            {sat}Ortbit
           </button>
         );
       })};
